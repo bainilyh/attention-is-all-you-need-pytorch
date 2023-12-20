@@ -1,0 +1,2 @@
+nohup python train_bert.py -data_pkl ./data/vocab.pkl -train_path ./data/train -val_path ./data/valid -log deen_bpe -embs_share_weight -proj_share_weight -label_smoothing -output_dir output -b 256 -warmup 128000 -epoch 400 > ./bert_category.log 2>&1 &
+python translate_for_test.py -model ./output/model.chkpt -data_pkl ./data/vocab.pkl -test_path ./data/test -log deen_bpe -output_dir output -b 2048
